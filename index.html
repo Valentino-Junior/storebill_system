@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <section>
+      <div class="container">
+        <h3 class="text-center"><b>Add your Products</b></h3>
+        <input class="btn btn-outline-success" type="button" value="Add Item " onclick="addRow('dataTable')" />
+
+        <input class="btn btn-danger" type="button" value="Delete Item" onclick="deleteRow('dataTable')" />
+        <form action="" method="post" enctype="multipart/form-data">
+
+
+          <table id="dataTable">
+            <tr>
+              <th style="padding-right:15px;">Select</th>
+              &nbsp;
+              <th style="padding-right:15px;">Item. No.</th>
+
+              <th>Description</th>
+
+              <th>Cost</th>
+              <th>Vat(%)</th>
+              <th>Quantity</th>
+              <th formula="(cost*del)+vat" summary="sum">Price</th>
+
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="chk[]" /></td>
+              <td> 1 </td>
+              <td> <input type="text" name="item[] " /> </td>
+              <td> <input type="number" Value=0 id="vat1" name="vat[]" /></td>
+              <td> <input type="number" Value=0 id="cost1" name="cost[]" /></td>
+              <td> <input type="number" Value=0 id="del1" name="del[]" /></td>
+              <td> <input type="number" id="price1" name="price[]" /> </td>
+            </tr>
+
+          </table>
+          <br />
+          <div class="total" style="text-align:right;padding-right:80px;">
+            Total: <input class="btn btn-Dark" type="text" readonly="readonly" name="total[]" onkeyup="totalIt()"
+              id="total" /><br /><br />
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+    </script>
+  </body>
+
+</html>
